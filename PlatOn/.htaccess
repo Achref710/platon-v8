@@ -1,0 +1,7 @@
+RewriteEngine On
+    RewriteBase /PlatOn/
+
+    # Redirect all requests that are not real files or directories to public/index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ public/index.php?url=$1 [QSA,L]
